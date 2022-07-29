@@ -38,7 +38,7 @@ export async function getStaticProps() {
   const { data } = await client.query<CharacterQuery>({
     query: gql`
       query Characters {
-        allPeople {
+        allPeople(first: 10) {
           people {
             name
             birthYear
@@ -54,7 +54,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      characters: data.allPeople.people.slice(0, 10),
+      characters: data.allPeople.people,
     },
   };
 }
