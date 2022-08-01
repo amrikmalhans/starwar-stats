@@ -13,11 +13,10 @@ interface Character {
 }
 
 interface Props {
-    characters: Character[]
+  characters: Character[];
 }
 
 const Home: NextPage<Props> = ({ characters }) => {
-
   return (
     <div>
       <CardGrid characters={characters} />
@@ -32,7 +31,7 @@ export default Home;
 interface CharacterQuery {
   allPeople: {
     people: Character[];
-  }
+  };
 }
 export async function getStaticProps() {
   const { data } = await client.query<CharacterQuery>({
@@ -58,4 +57,3 @@ export async function getStaticProps() {
     },
   };
 }
-

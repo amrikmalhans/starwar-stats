@@ -16,12 +16,12 @@ interface Props {
 
 const CardGrid: NextPage<Props> = ({ characters }) => {
   return (
-    <div className="bg-slate-200 m-10 p-20 grid grid-cols-3 justify-center items-center gap-10">
+    <section className="bg-slate-200 m-2 p-5 lg:m-10 lg:p-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-10">
       {characters &&
-        characters.map((character) => (
-          <Card key={character.id} character={character} />
+        characters.map((character, index) => (  
+          <Card key={character.id} character={character} index={index} />
         ))}
-    </div>
+    </section>
   );
 };
 

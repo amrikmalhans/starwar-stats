@@ -13,15 +13,13 @@ interface Homeworld {
 
 const Popover: NextPage<Props> = ({ homeworld }) => {
   return (
-    <div>
-      <div className=" absolute flex flex-col justify-center items-center max-w-sm rounded overflow-hidden shadow-lg bg-slate-100">
-        <div className="bg-white w-full p-5">
-          <List field="Name" value={homeworld.name} />
-          <List field="Population" value={homeworld.population} />
-          <List field="Diameter" value={homeworld.diameter} />
-        </div>
+    <section className="absolute flex flex-col justify-center items-center max-w-sm rounded shadow-lg bg-slate-100">
+      <div className="bg-white w-full p-5">
+        <List field="Name" value={homeworld.name} />
+        <List field="Population" value={homeworld.population} />
+        <List field="Diameter" value={homeworld.diameter} />
       </div>
-    </div>
+    </section>
   );
 };
 
